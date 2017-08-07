@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
+    "seed": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
+    "start": "which nodemon > /dev/null && nodemon index.js || node index.js"
   },
   "repository": {
     "type": "git",
