@@ -16,16 +16,17 @@ module.exports = {
     let profiles = [];
     for (let i = 0; i < 10; i++) {
       profiles.push({
-        city: "foo",
-        distance: 4,
+        userId: i + 1,
+        city: `city ${1}`,
+        distance: i,
         gender: "male",
-        hobbies: "foo bar",
-        ethnicity: "foobar",
-        height: "7 ft",
-        weight: 10,
-        portfolio: "rahh",
+        hobbies: `hobby ${i}`,
+        ethnicity: `ethnic ${i}`,
+        height: `${i} ft`,
+        weight: `${i}0`,
+        portfolio: `rahh ${i}`,
         offspring: true,
-        description: "i am a god"
+        description: `i am a god ${i}`
       });
     }
 
