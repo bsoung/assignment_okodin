@@ -22,8 +22,7 @@ module.exports = {
 		let params = { fname, lname, email, password };
 		User.create(params)
 			.then(user => {
-				console.log(user);
-				res.redirect(`/`);
+				res.redirect(`/user/${user.id}`);
 			})
 			.catch(e => res.status(500).send(e.stack));
 	},
@@ -46,22 +45,20 @@ module.exports = {
 			.catch(e => res.status(500).send(e.stack));
 	},
 
-	showUser: (req, res)=> {
+	showUserProfile: (req, res) => {
 		User.findById(req.params.userId, {
 			include: [
 				{
 					model: Profile
 				}
 			]
-		}).then(user=> {
-			let result = {
-				profile: user.dataValues.Profile,
-				user: user.dataValues
-			}
-			console.log(result)
-			res.render(`user`, result)
 		})
+			.then(user => {
+				console.log(user, "????");
+				console.log(user.dataValues.Profile, "???");
+
+				res.render(`user`, { user });
+			})
+			.catch(e => res.status(500).send(e.stack));
 	}
-
-
 };

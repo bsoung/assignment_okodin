@@ -1,3 +1,13 @@
-<h1>User Page Here</h1>
-{{result.user.fname}}
-{{result.user.lname}}
+<h1>"{{user.fname}} {{user.lname}}"</h1>
+
+
+{{#if user.Profile}}
+	{{user.Profile.city}}
+	{{user.Profile.gender}}
+	{{user.Profile.hobbies}}
+	{{user.Profile.height}}
+{{else}}
+	<form action="/user/profile/new" method="POST">
+		<button class="btn btn-primary">Create Profile</button>
+	</form>
+{{/if}}

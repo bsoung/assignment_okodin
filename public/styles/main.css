@@ -1,5 +1,15 @@
-.navbar {
-	width: 100vw;
-	height: 50px;
-	border: 1px solid black;
+body {
+	padding: 20px;
 }
+
+.card-display {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+/*.card-custom {
+  flex-grow: 1;
+  height: 100px;
+}
+*/
