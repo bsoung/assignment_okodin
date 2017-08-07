@@ -1,11 +1,21 @@
 <h1>"{{user.fname}} {{user.lname}}"</h1>
 
+<img src="https://cdnb.artstation.com/p/assets/images/images/003/869/103/20161102103509/micro_square/remko-troost-rugfer-viking.jpg?1478100909">
+
 
 {{#if user.Profile}}
-	{{user.Profile.city}}
-	{{user.Profile.gender}}
-	{{user.Profile.hobbies}}
-	{{user.Profile.height}}
+	<ul class="list-group">
+		<li class="list-group-item">Description: {{user.Profile.description}}</li>
+	  <li class="list-group-item">Gender: {{user.Profile.gender}}</li>
+	  <li class="list-group-item">Ethnicity: {{user.Profile.ethnicity}}</li>
+	  <li class="list-group-item">Height: {{user.Profile.height}}</li>
+	  <li class="list-group-item">Weight: {{user.Profile.weight}}</li>
+	  <li class="list-group-item">City: {{user.Profile.city}}</li>
+	  <li class="list-group-item">Hobbies: {{user.Profile.hobbies}}</li>
+	  <li class="list-group-item">Offspring: {{user.Profile.offspring}}</li>
+	  <li class="list-group-item">Portfolio: {{user.Profile.portfolio}}</li>
+	</ul>
+
 {{else}}
 	<form action="/user/profile/new" method="GET">
 		<button class="btn btn-primary">Create Profile</button>
