@@ -1,0 +1,30 @@
+{
+  "name": "assignment_okodin",
+  "version": "1.0.0",
+  "description": "Build a dating app so Viking thunder gods can find love &lt;3 Benjamin and Ed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdTriplett/assignment_okodin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdTriplett/assignment_okodin/issues"
+  },
+  "homepage": "https://github.com/EdTriplett/assignment_okodin#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "express-method-override-get-post-support": "0.0.7",
+    "method-override": "^2.3.9",
+    "sequelize": "^4.4.2",
+    "sequelize-cli": "^2.8.0"
+  }
+}

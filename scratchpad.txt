@@ -1,0 +1,28 @@
+models:
+
+User:{
+  _id:
+  username:
+  email:
+  password:
+
+}
+
+
+profile:{
+  _id: int
+  userId: int
+  city: varchar (20)
+  distance: int
+  gender: varchar
+  hobbies: text
+  ethnicity: varchar
+  Height: varchar
+  weight: int
+  portfolio: varchar
+  offspring: boolean
+  description: text
+  }
+}
+
+
