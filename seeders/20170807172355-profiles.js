@@ -14,10 +14,10 @@ module.exports = {
       }], {});
     */
     let profiles = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 1; i <= 10; i++) {
       profiles.push({
-        userId: i + 1,
-        city: `city ${1}`,
+        userId: i,
+        city: `city ${i}`,
         distance: i,
         gender: "male",
         hobbies: `hobby ${i}`,

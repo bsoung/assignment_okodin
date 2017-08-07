@@ -1,2 +1,16 @@
-<h1>Hello Viking!</h1>
+<header class="navbar">
+	<div>
+		<h3>OkOdin</h3>
+	</div>
+</header>
+
+<h1>Searching for .......</h1>
+
+<ul>
+	{{#each users as |user|}}
+		<li>{{user.fname}} {{user.lname}}</li>
+	{{/each}}
+</ul>
+
+
 

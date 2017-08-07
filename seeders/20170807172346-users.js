@@ -15,9 +15,9 @@ module.exports = {
       }], {});
     */
     let users = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 1; i <= 10; i++) {
       users.push({
-        profileId: i + 1,
+        profileId: i,
         fname: `Foo${i}`,
         lname: `Bar${i}`,
         email: `foobar${i}@gmail.com`,
