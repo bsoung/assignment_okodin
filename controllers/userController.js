@@ -1,5 +1,6 @@
 let models = require("./../models");
 let User = models.User;
+let Profile = models.Profile;
 
 module.exports = {
 	showUsers: (req, res) => {
@@ -43,5 +44,24 @@ module.exports = {
 				res.redirect(`/user/${user.id}`);
 			})
 			.catch(e => res.status(500).send(e.stack));
+	},
+
+	showUser: (req, res)=> {
+		User.findById(req.params.userId, {
+			include: [
+				{
+					model: Profile
+				}
+			]
+		}).then(user=> {
+			let result = {
+				profile: user.dataValues.Profile,
+				user: user.dataValues
+			}
+			console.log(result)
+			res.render(`user`, result)
+		})
 	}
+
+
 };

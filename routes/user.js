@@ -4,9 +4,7 @@ const { userController, profileController } = require("../controllers");
 
 // router.get("/", userController.showUsers);
 
-router.get("/:userId", (req, res) => {
-	res.send(`user page ${req.params.userId}`);
-});
+router.get("/:userId", userController.showUser);
 
 // router.post('/', userController.newUser);
 

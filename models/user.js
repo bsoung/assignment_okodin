@@ -11,6 +11,9 @@ module.exports = function(sequelize, DataTypes) {
     User.hasOne(models.Profile, {
       foreignKey: "userId"
     });
+    User.belongsTo(models.Profile, {
+      foreignKey: "id"
+    })
   };
   return User;
 };
