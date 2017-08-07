@@ -4,10 +4,10 @@ const { userController, profileController } = require("../controllers");
 
 // router.get("/", userController.showUsers);
 
-router.get("/", (req, res) => {
-	res.render("login");
+router.get("/:userId", (req, res) => {
+	res.send(`user page ${req.params.userId}`);
 });
 
-router.post("/", userController.login);
+// router.post('/', userController.newUser);
 
 module.exports = router;
