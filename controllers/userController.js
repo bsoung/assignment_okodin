@@ -20,11 +20,18 @@ module.exports = {
 	newUser: (req, res) => {
 		let { fname, lname, email, password } = req.body;
 		let params = { fname, lname, email, password };
-		User.create(params)
+		User.find({where: {email: email}}).then(user=>{
+			if (user) {
+				res.send("That email is taken already.")
+				return;
+			}
+			User.create(params)
 			.then(user => {
 				res.redirect(`/user/${user.id}`);
 			})
 			.catch(e => res.status(500).send(e.stack));
+		})
+		
 	},
 
 	login: (req, res) => {
@@ -36,11 +43,15 @@ module.exports = {
 
 		User.find(params)
 			.then(user => {
-				// set session
-				req.session["loggedIn"] = true;
+				if(user) {
+					req.session["loggedIn"] = true;
 
-				// redirect to user's home page /user/userId
-				res.redirect(`/user/${user.id}`);
+					// redirect to user's home page /user/userId
+					res.redirect(`/user/${user.id}`);
+					return;
+				}
+				res.send("Invalid entry - email does not exist!")
+				
 			})
 			.catch(e => res.status(500).send(e.stack));
 	},

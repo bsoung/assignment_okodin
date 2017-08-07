@@ -30,8 +30,9 @@ module.exports = {
       };
 
       Profile.create(params)
-        .then(user => {
-          res.redirect(`/user/${user.id}`);
+        .then(profile => {
+          res.redirect(`/user/${profile.id}`);
         })
         .catch(e => res.status(500).send(e.stack));
-    };
+    }
+}
